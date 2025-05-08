@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./suit.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div class="play">PLAYER</div>
+            </td>
+            <td>&nbsp;</td>
+            <td>
+                <div class="comp">COMPUTER</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="" alt="" id="play_choice">
+            </td>
+            <td>
+                <div class="vs">VS</div>
+            </td>
+            <td>
+                <img src="" alt="" id="comp_choice">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="result">a</div>
+            </td>
+        </tr>
+    </table>
+    <script>
+        var pChoice = parseInt(prompt('Selamat Bermain!!!!\nSilahkan Masukkan Angka Pilihan Anda:\n(Angka 1-9)'));
+        while (pChoice > 9 || pChoice < 1) {
+            alert('Angka harus dari 1-9');
+            var pChoice = prompt('Selamat Bermain!!!!\nSilahkan Masukkan Angka Pilihan Anda:\n(Angka 1-9)');
+        }
+        var cChoice = Math.ceil(Math.random() * 9);
+
+        const p_choice = document.querySelector('#play_choice');
+        p_choice.width = 100;
+        p_choice.height = 100;
+        if (pChoice == 1) {
+            p_choice.src = './img/1.jpg'
+        } else if (pChoice == 2) {
+            p_choice.src = './img/2.jpg'
+        } else if (pChoice == 3) {
+            p_choice.src = './img/3.jpg'
+        } else if (pChoice == 4) {
+            p_choice.src = './img/4.jpg'
+        } else if (pChoice == 5) {
+            p_choice.src = './img/5.jpg'
+        } else if (pChoice == 6) {
+            p_choice.src = './img/6.jpg'
+        } else if (pChoice == 7) {
+            p_choice.src = './img/7.jpg'
+        } else if (pChoice == 8) {
+            p_choice.src = './img/8.jpg'
+        } else {
+            p_choice.src = './img/9.jpg'
+        }
+        
+        const c_choice = document.querySelector('#comp_choice');
+        c_choice.width = 100;
+        c_choice.height = 100;
+        if (cChoice == 1) {
+            c_choice.src = './img/1.jpg'
+        } else if (cChoice == 2) {
+            c_choice.src = './img/2.jpg'
+        } else if (cChoice == 3) {
+            c_choice.src = './img/3.jpg'
+        } else if (cChoice == 4) {
+            c_choice.src = './img/4.jpg'
+        } else if (cChoice == 5) {
+            c_choice.src = './img/5.jpg'
+        } else if (cChoice == 6) {
+            c_choice.src = './img/6.jpg'
+        } else if (cChoice == 7) {
+            c_choice.src = './img/7.jpg'
+        } else if (cChoice == 8) {
+            c_choice.src = './img/8.jpg'
+        } else {
+            c_choice.src = './img/9.jpg'
+        }
+
+        if (pChoice > cChoice) {
+            document.querySelector('#result').innerHTML = 'PLAYER WIN';
+        }else if (pChoice < cChoice) {
+            document.querySelector('#result').innerHTML = 'PLAYER LOSE';
+        } else {
+            document.querySelector('#result').innerHTML = 'DRAW';
+        }
+
+    </script>
+</body>
+</html>
